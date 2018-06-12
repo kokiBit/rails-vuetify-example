@@ -1,9 +1,10 @@
 import Vue from 'vue/dist/vue.esm'
 import Router from 'vue-router'
 import store from '../store'
+import Main from '../layout/main'
 import Login from '../pages/login'
 import Dashboard from '../pages/dashboard'
-import Main from '../layout/main'
+import Users from '../pages/admin/users'
 
 function route (path, name, file, authMethod, children) {
   return {
@@ -38,6 +39,7 @@ export default new Router({
     route('/login', 'Login', Login, ifNotAuthenticated),
     route('/', 'Main', Main, ifAuthenticated, [
       route('/dashboard', 'Dashboard', Dashboard, ifAuthenticated),
+      route('/admin/users', 'Users', Users, ifAuthenticated),
     ]),
   ]
 })
