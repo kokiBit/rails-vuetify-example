@@ -17,7 +17,7 @@
                 v-icon {{ child.icon }}
               v-list-tile-content
                 v-list-tile-title {{ child.text }}
-          v-list-tile(v-else, :key="item.text", @click="")
+          v-list-tile(v-else, :key="item.text", :to='item.href')
             v-list-tile-action
               v-icon {{ item.icon }}
             v-list-tile-content
@@ -44,16 +44,16 @@ export default {
     dialog: false,
     drawer: null,
     items: [
-      { icon: 'contacts', text: 'Contacts' },
-      { icon: 'history', text: 'Frequently contacted' },
-      { icon: 'content_copy', text: 'Duplicates' },
+      { icon: 'contacts', text: 'Contacts', href: '/admin/users'},
+      { icon: 'history', text: 'Frequently contacted', href: '/dashboard' },
+      { icon: 'content_copy', text: 'Duplicates', href: '/dashboard' },
       {
         icon: 'keyboard_arrow_up',
         'icon-alt': 'keyboard_arrow_down',
         text: 'Labels',
         model: true,
         children: [
-          { icon: 'add', text: 'Create label' }
+          { icon: 'add', text: 'Create label', href: '/dashboard' }
         ]
       },
       {
@@ -62,18 +62,18 @@ export default {
         text: 'More',
         model: false,
         children: [
-          { text: 'Import' },
-          { text: 'Export' },
-          { text: 'Print' },
-          { text: 'Undo changes' },
-          { text: 'Other contacts' }
+          { text: 'Import', href: '/dashboard' },
+          { text: 'Export', href: '/dashboard' },
+          { text: 'Print', href: '/dashboard' },
+          { text: 'Undo changes', href: '/dashboard' },
+          { text: 'Other contacts', href: '/dashboard' }
         ]
       },
-      { icon: 'settings', text: 'Settings' },
-      { icon: 'chat_bubble', text: 'Send feedback' },
-      { icon: 'help', text: 'Help' },
-      { icon: 'phonelink', text: 'App downloads' },
-      { icon: 'keyboard', text: 'Go to the old version' }
+      { icon: 'settings', text: 'Settings', href: '/dashboard' },
+      { icon: 'chat_bubble', text: 'Send feedback', href: '/dashboard' },
+      { icon: 'help', text: 'Help', href: '/dashboard' },
+      { icon: 'phone', text: 'App downloads', href: '/dashboard' },
+      { icon: 'keyboard', text: 'Go to the old version', href: '/dashboard' }
     ]
   }),
   props: {
