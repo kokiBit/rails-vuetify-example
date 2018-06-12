@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import store from '../store'
 import Login from '../pages/login'
 import Dashboard from '../pages/dashboard'
-import Main from '../components/main'
+import Main from '../layout/main'
 
 function route (path, name, file, authMethod, children) {
   return {
