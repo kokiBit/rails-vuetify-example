@@ -7,17 +7,24 @@
 
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
+import Vuex from 'vuex'
+import router from '../router/index'
+import store from '../store'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.use(Vuetify)
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
-  components: { App }
+  components: { App },
+  router: router,
+  template: '<App/>',
+  store
 })
 
 
